@@ -1,0 +1,68 @@
+.navbar-custom{
+	background-image: linear-gradient(darkgray, gray)
+}
+.navbar-custom2{
+	background-color: red;
+}
+#storeName{
+
+}
+.white-text{
+	font-family: cursive;
+	color: white;
+}
+
+.white-text a{
+	font-family: cursive;
+	color: white;
+}
+.carousel{
+	height: auto;
+	width: 800px;
+}
+
+#navBar li a{
+	font-family: inherit;
+	font-weight: bold;
+	color: black;
+	transition-duration: 0.5s;
+}
+
+#navBar li a:hover{
+	color: lightgray;
+}
+
+.border-top{
+
+}
+.navbar-dark button{
+	transition-duration: 0.5s;
+
+}
+
+.navbar-dark button:hover{
+	background-color: gray;
+}
+.navbar-dark a{
+	text-decoration: none;
+	color: black;
+	transition-duration: 0.5s;
+
+}
+.navbar-dark a:hover{
+	background-color: white;
+}
+.col-sm-6{
+	font-size: 40px;
+	font-family: serif;
+}
+
+#searchBar input{
+	height: auto;
+	font-size: 30px;
+	color: white;
+	border: 1px solid black;
+}
+#searchBar{
+	overflow: hidden;
+}
