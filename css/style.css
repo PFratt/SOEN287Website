@@ -1,68 +1,149 @@
-.navbar-custom{
-	background-image: linear-gradient(darkgray, gray)
-}
-.navbar-custom2{
-	background-color: red;
-}
-#storeName{
 
+
+.secondary-color{
+	background-color: #F5EEC2;
 }
-.white-text{
-	font-family: cursive;
-	color: white;
+.tertiary-color{
+	background-color: #E1EEDD;
+}
+.primary-color{
+	color: #416A59;
+}
+.primary-color-background{
+	background-color: #416A59;
+}
+body{
+	background-color: #E1EEDD;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
-.white-text a{
-	font-family: cursive;
-	color: white;
+.primary-color a{
+	font-family: fantasy;
 }
 .carousel{
 	height: auto;
 	width: 800px;
 }
-
 #navBar li a{
 	font-family: inherit;
 	font-weight: bold;
 	color: black;
 	transition-duration: 0.5s;
 }
-
 #navBar li a:hover{
 	color: lightgray;
 }
-
 .border-top{
 
 }
-.navbar-dark button{
+.navbar-light button{
 	transition-duration: 0.5s;
-
 }
-
-.navbar-dark button:hover{
+.navbar-light button:hover{
 	background-color: gray;
 }
-.navbar-dark a{
+.navbar-light a{
 	text-decoration: none;
 	color: black;
 	transition-duration: 0.5s;
-
 }
-.navbar-dark a:hover{
+.navbar-light a:hover{
 	background-color: white;
 }
 .col-sm-6{
 	font-size: 40px;
 	font-family: serif;
 }
-
 #searchBar input{
 	height: auto;
 	font-size: 30px;
 	color: white;
 	border: 1px solid black;
 }
+#popular-title{
+	border-top-style: dotted;
+	border-bottom-style: dotted;
+	text-align: center;
+}
 #searchBar{
-	overflow: hidden;
+	font-size: 30px;
+}
+.food-item{
+	border: 2px;
+	border-bottom-style: outset;
+	border-right-style: outset;
+	border-top-style: inset;
+	border-left-style: inset;
+	background-color: white;
+	padding-bottom: 2%;
+	margin: 1%;
+	width: 100%;
+}
+.food-item-filler{
+	margin: 1%;
+	width: 100%;
+}
+.food-item button{
+	border-radius: unset;
+	background-color: #636363;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	width: 100%;
+	transition-duration: 0.5s;
+}
+.food-item button:hover{
+	background-color: lightgray;
+}
+.food-item a img{
+	width: 100%;
+}
+.company-name{
+	font-size: 15px;
+	font-family: sans-serif;
+	color: #969696;
+}
+.food-name{
+	font-size: 17px;
+	font-family: sans-serif;
+}
+.price-discount-name{
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+}
+.price-name{
+	font-family: sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+}
+.regular-price-name{
+	font-family: sans-serif;
+	font-size: 17px;
+	text-decoration: line-through;
+}
+.aisle-title{
+	font-family: fantasy;
+	border-bottom-style: dotted;
+}
+
+#footer-bar{
+	background-color: black;
+	color: black;
+}
+#footer-bar span a{
+	font-size: 25px;
+	padding: 0px;
+	text-decoration: none;
+}
+.footer-content{
+	color: black;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.footer-subcontent{
+	color: black;
+	font-size: 20px;
 }
