@@ -15,6 +15,13 @@ body{
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+#search-button{
+	background-color: #4B4B4B;
+	animation-duration: 0.5s;
+}
+#search-button:hover{
+	background-color: gray;
+}
 
 .primary-color a{
 	font-family: fantasy;
