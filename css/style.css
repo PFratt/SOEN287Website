@@ -68,7 +68,7 @@ html,body
 #searchBar input{
 	height: auto;
 	font-size: 30px;
-	color: white;
+	color: black;
 	border: 1px solid black;
 }
 #popular-title{
