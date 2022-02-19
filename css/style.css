@@ -17,7 +17,7 @@ html,body
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 #search-button{
@@ -168,6 +168,32 @@ html,body
 	margin-bottom: 4px;
 }
 
+.description {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
+
+.description .nutrional-value {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.description:hover .nutrional-value {
+  visibility: visible;
+}
+
 /* Bayazeed */
 
 input[type=text], input[type=password] {
@@ -197,7 +223,7 @@ input[type=text], input[type=password] {
 }
 
 .login-form
-{ 
+{
   font-family: sans-serif;
   font-size: 17px;
 }
@@ -207,5 +233,5 @@ input[type=text], input[type=password] {
   float: right;
   width: 31%;
   padding: 20px;
- 
+
 }

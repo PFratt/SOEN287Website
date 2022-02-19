@@ -28,7 +28,7 @@
 				<button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       				<span class="navbar-toggler-icon"></span>
     			</button>
-				
+
 			<a href="login.html">
     			<span class="navbar-expand-md">
     				<button type="button" class="collapse navbar-collapse btn btn-default btn-md float-right pr-2">
@@ -93,6 +93,9 @@
 				<a class="justify-content-center" href=""><img src="./img/beefsteak.jpg"></img></a>
 				<p class="company-name mb-0">Meat & Poultry</p>
 				<p class="food-name mt-0">Strip Steak</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">A decently well marbled cut of steak, coming from the short loin of the cow</span>
+				</div>
 				<p class="price-discount-name">Price discounted</p>
 				<p class="regular-price-name mb-0">Regular Price</p>
 				<p class="company-name">Quantity</p>
@@ -105,6 +108,9 @@
 				<a href=""><img src="./img/groundbeef.jpg"></img></a>
 				<p class="company-name mb-0">Meat & Poultry</p>
 				<p class="food-name mt-0">Ground Beef</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">80% lean ground beef, perfect for burgers or sausages</span>
+				</div>
 				<p class="price-name">Price</p>
 				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
@@ -116,6 +122,9 @@
 				<a href=""><img src="./img/chicken.jpg"></img></a>
 				<p class="company-name mb-0">Meat & Poultry</p>
 				<p class="food-name mt-0">Chicken Breast</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">Classic chicken breast, high in protein</span>
+				</div>
 				<p class="price-name">Price</p>
 				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
@@ -129,6 +138,9 @@
 				<a class="justify-content-center" href=""><img src="./img/beefstrips.jpg"></img></a>
 				<p class="company-name mb-0">Meat & Poultry</p>
 				<p class="food-name mt-0">Beef Strips</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">A nice lean cut of beef, excellent for stir-fry and noodle dishes</span>
+				</div>
 				<p class="price-name">Price</p>
 				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
@@ -141,8 +153,15 @@
 				<p class="company-name mb-0">Dairy & Eggs</p>
 				<p class="food-name mt-0">Eggs</p>
 				<p class="price-name">Price</p>
-				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
+					<label for="option-selector">Type:</label>
+					<select name="option-selector" id="option-selector">
+						<option value="select" style="display:none">Select</option>
+						<option value="white">White Eggs</option>
+						<option value="brown">Brown Eggs</option>
+						<option value="free-range">Free Range Eggs</option>
+					</select>
+				<p class="company-name">Quantity</p>
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
 					<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
 				</form>
@@ -152,8 +171,15 @@
 				<p class="company-name mb-0">Dairy & Eggs</p>
 				<p class="food-name mt-0">Milk</p>
 				<p class="price-name">Price</p>
-				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
+					<label for="option-selector">Type:</label>
+					<select name="option-selector" id="option-selector">
+						<option value="0%" style="display:none">Select</option>
+						<option value="1%">1%</option>
+						<option value="2%">2%</option>
+						<option value="5%">5%</option>
+					</select>
+				<p class="company-name">Quantity</p>
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
 					<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
 				</form>
@@ -164,6 +190,9 @@
 				<a href=""><img src="./img/redfish.jpg"></img></a>
 				<p class="company-name mb-0">Fish & Seafood</p>
 				<p class="food-name mt-0">Redfish</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">A mild, sweeter flavour with a medium=firm texture, fished from the Atlantic Ocean</span>
+				</div>
 				<p class="price-discount-name">Price discounted</p>
 				<p class="regular-price-name mb-0">Regular Price</p>
 				<p class="company-name">Quantity</p>
@@ -175,8 +204,11 @@
 				<div class="col-md food-item">
 				<a href=""><img src="./img/grayfish.jpg"></img></a>
 				<p class="company-name mb-0">Fish & Seafood</p>
-				<p class="food-name mt-0">Grayfish</p>
+				<p class="food-name mt-0">Sea Bream</p>
 				<p class="price-name">Price</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">Delicate flavour with a succulent whitish-gray flesh</span>
+				</div>
 				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
@@ -188,6 +220,9 @@
 				<p class="company-name mb-0">Fish & Seafood</p>
 				<p class="food-name mt-0">Salmon</p>
 				<p class="price-name">Price</p>
+				<div class="description">+ Description
+					<span class="nutrional-value mt-0">Delicious, fresh and flaky, fished from the Atlantic Ocean</span>
+				</div>
 				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
@@ -213,8 +248,15 @@
 				<p class="company-name mb-0">Fruits & Vegetables</p>
 				<p class="food-name mt-0">Carrot</p>
 				<p class="price-name">Price</p>
-				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
+					<label for="option-selector">Type:</label>
+					<select name="option-selector" id="option-selector">
+						<option value="select" style="display:none">Select</option>
+						<option value="danvers">Danvers</option>
+						<option value="purple">Purple</option>
+						<option value="nantes">Nantees</option>
+					</select>
+				<p class="company-name">Quantity</p>
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
 					<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
 				</form>
@@ -224,8 +266,15 @@
 				<p class="company-name mb-0">Fruits & Vegetables</p>
 				<p class="food-name mt-0">Tomato</p>
 				<p class="price-name">Price</p>
-				<p class="company-name">Quantity</p>
 				<form action= "PHP FILE FOR LATER!">
+					<label for="option-selector">Type:</label>
+					<select name="option-selector" id="option-selector">
+						<option value="select" style="display:none">Select</option>
+						<option value="cherry">Cherry</option>
+						<option value="roma">Roma</option>
+						<option value="san-marzano">San Marzano</option>
+					</select>
+				<p class="company-name">Quantity</p>
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
 					<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
 				</form>
@@ -236,10 +285,17 @@
 				<a class="justify-content-center" href=""><img src="./img/apple.jpg"></img></a>
 				<p class="company-name mb-0">Fruits & Vegetables</p>
 				<p class="food-name mt-0">Apple</p>
+				<form action= "PHP FILE FOR LATER!">
+					<label for="option-selector">Type:</label>
+					<select name="option-selector" id="option-selector">
+						<option value="select" style="display:none">Select</option>
+						<option value="gala">Gala</option>
+						<option value="fuji">Fuji</option>
+						<option value="honeycrisp">Honeycrisp</option>
+					</select>
 				<p class="price-discount-name">Price discounted</p>
 				<p class="regular-price-name mb-0">Regular Price</p>
 				<p class="company-name">Quantity</p>
-				<form action= "PHP FILE FOR LATER!">
   				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
 					<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
 				</form>
