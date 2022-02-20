@@ -83,12 +83,14 @@
     function calculateRowTotal(selectObject)
     {
       var rowIndex = $(selectObject).closest('tr').index() + 2;
-      var myTable = document.getElementById('shoppingCart-table');
+      var shoppingCartTable = document.getElementById('shoppingCart-table');
+      var checkoutTable = document.getElementById('checkout-table');
 
       var quantity = selectObject.value;
-      var price = myTable.rows[rowIndex].cells[2].innerHTML;
+      var price = shoppingCartTable.rows[rowIndex].cells[2].innerHTML;
 
-      myTable.rows[rowIndex].cells[4].innerHTML = (quantity * price).toFixed(2);
+      shoppingCartTable.rows[rowIndex].cells[4].innerHTML = (quantity * price).toFixed(2);
+      checkoutTable.rows[rowIndex].cells[1].innerHTML = (quantity * price).toFixed(2);
 
       calculateTotal();
     }
@@ -96,10 +98,13 @@
     function resetRow(buttonObject)
     {
       var rowIndex = $(buttonObject).closest('tr').index() + 2;
-      var myTable = document.getElementById('shoppingCart-table');
+      var shoppingCartTable = document.getElementById('shoppingCart-table');
+      var checkoutTable = document.getElementById('checkout-table');
 
-      myTable.rows[rowIndex].cells[3].getElementsByTagName("select")[0].selectedIndex = 0;
-      myTable.rows[rowIndex].cells[4].innerHTML = myTable.rows[rowIndex].cells[2].innerHTML;
+      shoppingCartTable.rows[rowIndex].cells[3].getElementsByTagName("select")[0].selectedIndex = 0;
+      shoppingCartTable.rows[rowIndex].cells[4].innerHTML = shoppingCartTable.rows[rowIndex].cells[2].innerHTML;
+      checkoutTable.rows[rowIndex].cells[1].innerHTML = shoppingCartTable.rows[rowIndex].cells[2].innerHTML;
+
       calculateTotal();
     }
 
@@ -107,17 +112,23 @@
     {
       //add to total
       var total = 0.00;
-      var myTable = document.getElementById('shoppingCart-table');
-
+      var shoppingCartTable = document.getElementById('shoppingCart-table');
+      var checkoutTable = document.getElementById('checkout-table');
       for(let i = 2; i < 8; i++)
       {
-        total += parseFloat(myTable.rows[i].cells[4].innerHTML);
+        total += parseFloat(shoppingCartTable.rows[i].cells[4].innerHTML);
       }
 
-      myTable.rows[8].cells[1].innerHTML = total.toFixed(2);
+      //shoppingCartTable.rows[8].cells[1].innerHTML = total.toFixed(2);
+      var GST = 0.05 * total;
+      var QST = 0.0975 * total;
+
+      checkoutTable.rows[8].cells[1].innerHTML = GST.toFixed(2);
+      checkoutTable.rows[9].cells[1].innerHTML = QST.toFixed(2);
+      checkoutTable.rows[10].cells[1].innerHTML = (total+GST+QST).toFixed(2);
     }
 
-    function notYetImplemented() {
+    function checkout() {
       alert("Thank you for your payment!");
     }
   </script>
@@ -164,7 +175,7 @@
        vertical-align: middle;
      }
 
-     .shoppingCart-container tfoot td{
+     .shoppingCart-container tfoot{
        font-weight: bold;
        vertical-align: middle;
        border-top: 2px solid black;
@@ -173,6 +184,7 @@
 
      .shoppingCart-container tfoot button{
        font-weight: bold;
+       font-size: small;
        text-align: center;
        vertical-align: middle;
        color: inherit;
@@ -182,23 +194,35 @@
        background-color: white;
      }
 
+     #checkout-table {
+       border: 2px solid black;
+       font-size: small;
+     }
+
+     #checkout-table th{
+       border-bottom: 2px solid black;
+     }
+
+     #checkout-table button{
+       border: 1px solid black;
+     }
+
     </style>
 
     <title>Shopping Cart</title>
 
   </head>
   <body>
-    <!--Display a dummy list of items (at least 3 items).-->
     <div class="shoppingCart-container">
       <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-md-9">
           <div class="table-responsive mt-2">
             <form class="shoppingCart-form" action="" method="post">
               <table class="table table-striped text-center" id="shoppingCart-table">
                 <thead>
                   <tr>
                     <td colspan="6">
-                      <h2>Shopping Cart Items</h3>
+                      <h2>Shopping Cart Items</h2>
                     </td>
                   </tr>
                   <tr>
@@ -339,7 +363,15 @@
                     <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-refresh fa-lg"></i></button></td>
                   </tr>
                 </tbody>
-                <tfoot class="primary-color">
+                <!-- <tfoot class="primary-color">
+                  <tr class="secondary-color">
+                    <td colspan="4" align="right">GST</td>
+                    <td colspan="2" align="left">0.05</td>
+                  </tr>
+                  <tr class="secondary-color">
+                    <td colspan="4" align="right">QST</td>
+                    <td colspan="2" align="left">0.0975</td>
+                  </tr>
                   <tr class="secondary-color">
                     <td colspan="4" align="right">Total</td>
                     <td>45.94</td>
@@ -347,15 +379,82 @@
                       <button type="button" class="btn" onclick="notYetImplemented()"><i class="fa fa-credit-card-alt"></i> Checkout</button>
                     </td>
                   </tr>
-                </tfoot>
+                </tfoot> -->
               </table>
             </form>
         </div>
+        </div>
+        <div class="col-md-2">
+          <div class="table-responsive table-striped mt-2">
+            <form class="checkout-form" action="" method="post">
+              <table class="table text-center" id="checkout-table">
+                <thead>
+                  <br><br><br>
+                  <tr>
+                    <th colspan="2">
+                        <h4><strong>Checkout</strong></h4>
+                    </th>
+                  </tr>
+
+                  <th>Item</th>
+                  <th>Price</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Apples</td>
+                    <td>1.99</td>
+                  </tr>
+                  <tr>
+                    <td>Steak</td>
+                    <td>15.99</td>
+                  </tr>
+                  <tr>
+                    <td>Eggs</td>
+                    <td>2.99</td>
+                  </tr>
+                  <tr>
+                    <td>Carrots</td>
+                    <td>7.99</td>
+                  </tr>
+                  <tr>
+                    <td>Chicken</td>
+                    <td>10.99</td>
+                  </tr>
+                  <tr>
+                    <td>Milk</td>
+                    <td>5.99</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td class="secondary-color">GST</td>
+                    <td class="secondary-color">2.30</td>
+                  </tr>
+                  <tr>
+                    <td class="secondary-color">QST</td>
+                    <td class="secondary-color">4.48</td>
+                  </tr>
+                  <tr>
+                    <td class="secondary-color">Total</td>
+                    <td class="secondary-color">52.72</td>
+                  </tr>
+                  <tr>
+                    <td class="secondary-color">
+                      <button type="button" class="btn" onclick="window.location.href = 'index.html'">Continue Shopping</button>
+                    </td>
+                    <td class="secondary-color">
+                      <button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-    <!--Show a summary table at the right of the cart page, including the number of items in the cart, QST, GST, and total price.-->
-    <!--CSS Responsive Design (Desktop, Tablet, and Mobile)-->
 
 <!--FROM SAM-->
     <div class="row col-lg-12 pt-4 pb-4 ml-0 mr-0" id="footer-bar">
