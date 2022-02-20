@@ -198,7 +198,7 @@ html,body
 
 input[type=text], input[type=password] {
   font-family: sans-serif;
-  width: 80%;
+  width: 85%;
   font-size: 15px;
   padding: 12px 10px;
   margin: 8px 0;
@@ -215,24 +215,33 @@ input[type=text], input[type=password] {
   margin-bottom: 200px;
   border: 1px solid;
   cursor: pointer;
-  width: 80%;
+  width: 85%;
 }
 
 .submit-button:hover{
   background-color:DarkBlue;
 }
 
-.login-form
-{
+.reset-button{
   font-family: sans-serif;
-  font-size: 17px;
+  font-size: 15px;
+  color: white;
+  background-color: LightCoral;
+  padding: 12px 10px;
+  margin: 5px 0;
+  margin-bottom: 10px;
+  border: 1px solid;
+  cursor: pointer;
+  width: 85%;
 }
 
+.reset-button:hover{
+  background-color:Crimson;
+}
 
-.vertical-spacing {
-  float: right;
-  width: 31%;
-  padding: 20px;
-
+.login-form
+{ 
+  font-family: sans-serif;
+  font-size: 17px;
 }
 
