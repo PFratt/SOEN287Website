@@ -16,7 +16,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<title>ShopiFood</title>
-  
+
 </head>
 <body>
 <div id="wrapper">
@@ -77,13 +77,13 @@ function addRow() {
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
-  
+
   cell1.innerHTML = '<value = placeholder>';
   cell2.innerHTML = '<input type="text" value="">';
   cell3.innerHTML = '<input type="text" value="" onclick="delRow(@id)">';
   cell4.innerHTML = '<button type="button" value="Save" onclick="savRow(@id)">' + '<span class="glyphicon glyphicon-pencil"></span> Save</button>';
-  
-  
+
+
 }
 </script>
 
@@ -99,17 +99,52 @@ function savRow(id) {
 
 
 </body>
-  
-  	<footer class="tertiary-color container pt-2">
-		<div class="row">
-			<span class="col-md">
-				<p class="footer-content">Customer Service</p>
-				<a href="#" class="footer-subcontent">Contact us</a>
-			</span>
-			<span class="col-md">
-				<p class="footer-content">Authors</p>
-				<p class="footer-subcontent">list of names</p>
-			</span>
-		</div>
-	</footer>
+
+<div class="row col-lg-12 pt-4 pb-4 ml-0 mr-0" id="footer-bar">
+  <span class="primary-color container">
+    <a class="pt-3 pr-1 pl-1 primary-color" href="index.html">
+    ShopiFood
+    </a>
+  </span>
+</div>
+
+<footer class="tertiary-color container pt-2">
+  <div class="row">
+    <span class="col-md">
+      <p class="footer-content">Sitemap</p>
+      <a href="index.html" class="footer-subcontent">Home</a><br>
+      <a href="shoppingCart.html" class="footer-subcontent">Shopping Cart</a><br>
+      <a href="create_account.html" class="footer-subcontent">Sign Up</a><br>
+      <a href="login.html" class="footer-subcontent">Sign In</a><br>
+      <a href="reset_password.html" class="footer-subcontent">Reset Password</a><br>
+    </span>
+    <span class="col-md">
+      <p class="footer-content">Aisles</p>
+      <a href="all-products.html" class="footer-subcontent">All Products</a><br>
+      <a href="dairy-eggs.html" class="footer-subcontent">Dairy & Eggs</a><br>
+      <a href="fish-seafood.html" class="footer-subcontent">Fish & Seafood</a><br>
+      <a href="fruits-vegetables.html" class="footer-subcontent">Fruits & Vegetables</a><br>
+      <a href="meats-poultry.html" class="footer-subcontent">Meats & Poultry</a><br>
+    </span>
+    <span class="col-md">
+      <p class="footer-content">Backstore</p>
+      <a href="ordersList.html" class="footer-subcontent">List of Orders</a><br>
+      <a href="ordersSpec.html" class="footer-subcontent">Order Specifics</a><br>
+      <a href="productList.html" class="footer-subcontent">List of Products</a><br>
+      <a href="productSpec.html" class="footer-subcontent">Product Specifics</a><br>
+      <a href="usersList.html" class="footer-subcontent">List of Users</a><br>
+      <a href="userSpecs.html" class="footer-subcontent">User Specifics</a><br>
+      <br>
+    </span>
+    <span class="col-md">
+      <p class="footer-content">Authors</p>
+      <p class="footer-subcontent" style="margin: 0">Justin Cheng</p>
+      <p class="footer-subcontent" style="margin: 0">Samuel Wong</p>
+      <p class="footer-subcontent" style="margin: 0">Philip Frattolillo</p>
+      <p class="footer-subcontent" style="margin: 0">Craig Kogan</p>
+      <p class="footer-subcontent" style="margin: 0">Bayazeed Rahman</p>
+      <p class="footer-subcontent" style="margin: 0">Elias Youssef</p>
+    </span>
+  </div>
+</footer>
 </html>
