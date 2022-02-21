@@ -200,7 +200,10 @@
      #checkout-table button{
        border: 1px solid black;
      }
-
+     .table-responsive {
+       overflow-x: visible;
+       overflow-y: visible;
+     }
     </style>
 
     <title>Shopping Cart</title>
@@ -209,7 +212,7 @@
   <body>
     <div class="shoppingCart-container">
       <div class="row justify-content-center">
-        <div class="col-sm-9">
+        <div class="col-lg-9">
           <div class="table-responsive mt-2">
             <form class="shoppingCart-form" action="" method="post">
               <table class="table table-striped text-center" id="shoppingCart-table">
@@ -378,7 +381,7 @@
             </form>
         </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-lg-2">
           <div class="table-responsive table-striped mt-2">
             <form class="checkout-form" action="" method="post">
               <table class="table text-center" id="checkout-table">
