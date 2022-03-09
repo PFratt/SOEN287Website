@@ -240,8 +240,85 @@ input[type=text], input[type=password] {
 }
 
 .login-form
-{ 
+{
   font-family: sans-serif;
   font-size: 17px;
 }
 
+.item-page-name{
+	font-family: sans-serif;
+	font-size: 35px;
+	padding: 1px;
+	font-weight: bold;
+}
+
+.prev-nav{
+	font: fantasy;
+	color: gray;
+}
+
+.quantity-input-2{
+	background-color: #F5EEC2;
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 2px;
+	padding-left: 12px;
+	padding-right: 4px;
+	margin-bottom: 4px;
+}
+
+.company-name-2{
+	font-size: 15px;
+	font-family: sans-serif;
+	color: #969696;
+	padding-top: 30px;
+}
+
+.image-product-page{
+	padding: 12px;
+	margin: 12px;
+}
+.outer{
+	width: 100%;
+}
+
+.description2{
+	padding: 12px;
+	margin: 12px;
+	border-top: 2px dotted;
+	border-bottom: 2px dotted;
+	font-family: serif;
+}
+
+.number-of-items{
+	padding-top:3px;
+	padding-bottom:20px;
+	margin:inherit;
+	font-family: sans-serif;
+}
+
+.accordion {
+	font-family:sans-serif;
+  background-color: #E1EEDD;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+.active, .accordion:hover {
+  background-color: #F5EEC2;
+}
+
+.outer {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}

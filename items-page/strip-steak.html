@@ -12,7 +12,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 		<!-- Latest compiled JavaScript -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<title>ShopiFood</title>
 	</head>
 	<body class="m-auto">
@@ -77,79 +77,55 @@
 		<hr class="pt-0 mt-0 pb-0 mb-0 row">
 
 		<div class="container">
-			<div class="justify-content-center mb-4 row">
-				<div id="carouselControls" class="carousel slide" data-ride="carousel">
-				  <div class="carousel-inner m-auto p-auto">
-				    <div class="carousel-item active">
-				      <img class="d-block w-100" src="./img/slide1.jpg" alt="First slide [800x400]">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block w-100" src="./img/slide2.jpg" alt="Second slide">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block w-100" src="./img/slide3.jpg" alt="Third slide">
-				    </div>
-				  </div>
-				  <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				  </a>
-				  <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				  </a>
+			<div class="row">
+				<div class="col-md-12 mt-4">
+					<a class="prev-nav" href="index.html">Home</a><a> / </a><a class="prev-nav" href="meat-poultry.html">Meat & Poultry</a><a> / </a><a>Strip Steak</a>
 				</div>
-			</div>
-
-			<div class="row justify-content-center">
-				<h2 class="col-lg-12 pt-2 pb-2 mb-2 primary-color" id="popular-title">Popular</h2>
-			</div>
-
-			<div class="mt-4 ml-1 mr-1 row">
-				<div class="col-md food-item">
-					<a class="justify-content-center" href="strip-steak.html"><img src="./img/beefsteak.jpg"></img></a>
-					<p class="company-name mb-0">Meat & Poultry</p>
-					<p class="food-name mt-0">Strip Steak</p>
-					<div class="description">+ Description
-						<span class="nutrional-value mt-0">A decently well marbled cut of steak, coming from the short loin of the cow</span>
-					</div>
-					<p class="price-discount-name">Price discounted</p>
-					<p class="regular-price-name mb-0">Regular Price</p>
-					<p class="company-name">Quantity</p>
-					<form action= "PHP FILE FOR LATER!">
-	  				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
-						<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
-					</form>
-				</div>
-				<div class="col-md food-item">
-					<a href=""><img src="./img/redfish.jpg"></img></a>
-					<p class="company-name mb-0">Fish & Seafood</p>
-					<p class="food-name mt-0">Redfish</p>
-					<div class="description">+ Description
-						<span class="nutrional-value mt-0">A mild, sweeter flavour with a medium=firm texture, fished from the Atlantic Ocean</span>
-					</div>
-					<p class="price-discount-name">Price discounted</p>
-					<p class="regular-price-name mb-0">Regular Price</p>
-					<p class="company-name">Quantity</p>
-					<form action= "PHP FILE FOR LATER!">
-	  				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
-						<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
-					</form>
-				</div>
-					<div class="col-md food-item">
-					<a href=""><img src="./img/celery.jpg"></img></a>
-					<p class="company-name mb-0">Fruits & Vegetables</p>
-					<p class="food-name mt-0">Celery</p>
-					<p class="price-discount-name">Price discounted</p>
-					<p class="regular-price-name mb-0">Regular Price</p>
-					<p class="company-name">Quantity</p>
-					<form action= "PHP FILE FOR LATER!">
-	  				<input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="99">
-						<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
-					</form>
-				</div>
-
-
 			</div>
 		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mt-4 mb-4">
+					<a class="justify-content-center image-product-page" href="strip-steak.html"><img src="../img/beefsteak.jpg" class="img-responsive"></img></a>
+				</div>
+				<div class="col-md-3">
+					<div class="item-page-name mt-3">
+						Strip Steak
+					</div>
+				<p class="number-of-items">1 Steak per package</p>
+				<p class="price-discount-name">Price discounted</p>
+				<p class="regular-price-name mb-0">Regular Price</p>
+				<p class="company-name-2">Quantity</p>
+				<form action= "PHP FILE FOR LATER!">
+					<input class="quantity-input-2" type="number" id="quantity" name="quantity" min="1" max="99">
+					<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>
+				</form>
+			</div>
+			<div class="col-md-5">
+				<button class="accordion">Description:</button>
+					<div class="outer">
+						<p class="description2">A decently well marbled cut of steak, coming from the short loin of the cow</p>
+					</div>
+					<script>
+					var acc = document.getElementsByClassName("accordion");
+					var i;
+
+					for (i = 0; i < acc.length; i++) {
+						acc[i].addEventListener("click", function() {
+							this.classList.toggle("active");
+							var panel = this.nextElementSibling;
+						if (panel.style.display === "block") {
+							panel.style.display = "none";
+						} else {
+							panel.style.display = "block";
+							}
+						});
+					}
+					</script>
+				</div>
+		</div>
+	</div>
 	</body>
 
 	<div class="row col-lg-12 pt-4 pb-4 ml-0 mr-0" id="footer-bar">
