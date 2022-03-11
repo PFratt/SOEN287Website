@@ -114,7 +114,6 @@
 
     function calculateTotal()
     {
-      //add to total
       var total = 0.00;
       var shoppingCartTable = document.getElementById('shoppingCart-table');
       var checkoutTable = document.getElementById('checkout-table');
@@ -123,7 +122,6 @@
         total += parseFloat(shoppingCartTable.rows[i].cells[4].innerHTML);
       }
 
-      //shoppingCartTable.rows[8].cells[1].innerHTML = total.toFixed(2);
       var GST = 0.05 * total;
       var QST = 0.0975 * total;
 
@@ -135,40 +133,36 @@
     function checkout() {
       alert("Thank you for your payment!");
     }
+
+    function saveClearedData(buttonObject)
+    {
+        var rowIndex = $(buttonObject).closest('tr').index() + 2;
+        var shoppingCartTable = document.getElementById('shoppingCart-table');
+        var value = shoppingCartTable.rows[rowIndex].cells[3].getElementsByTagName('input')[0].value;
+        var id = shoppingCartTable.rows[rowIndex].cells[3].getElementsByTagName('input')[0].id;
+
+        saveData(id, value);
+    }
+
+    function saveData(id, value)
+    {
+        sessionStorage.setItem(id, value);
+    }
+
+    function loadData()
+    {
+      for (var i = 0; i < sessionStorage.length; i++)
+      {
+        var key = sessionStorage.key(i);
+        if(key)
+        {
+          document.getElementById(key).value = sessionStorage.getItem(key);
+          document.getElementById(key).dispatchEvent(new Event('change'));
+        }
+      }
+    }
   </script>
     <style>
-    /*
-     body{
-        margin: 30px;
-      }
-      */
-      /* .shoppingCart-container{
-        border: 2px solid black;
-      }
-      .shoppingCart-row-head{
-        height: 20;
-      }
-      .shoppingCart-col-head{
-        font-weight: 700;
-      }
-
-      .shoppingCart-container table{
-        border-collapse: collapse;
-        width: 100%;
-        table-layout: fixed;
-      }
-
-        .shoppingCart-container table thead{
-          font-weight: 700;
-      }
-      .shoppingCart-container table thead tr{
-        border: 2px solid black;
-     } */
-      /* .shoppingCart-container table thead th{
-        background-color: #416A59;
-        color: #E1EEDD;
-        text-align: center;
-     } */
 
      .shoppingCart-container img{
        width: 75px;
@@ -220,7 +214,7 @@
     <title>Shopping Cart</title>
 
   </head>
-  <body>
+  <body onload="loadData()">
     <div class="shoppingCart-container">
       <div class="row justify-content-center">
         <div class="col-lg-9">
@@ -261,10 +255,10 @@
                         <option>9</option>
                         <option>10</option>
                       </select> -->
-                      <input type="number" name="" value="1" class="form-control" onchange="calculateRowTotal(this, value)" min="1">
+                      <input type="number" id="inputApple" value="1" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1">
                     </td>
                     <td>1.99</td>
-                    <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-trash fa-lg"></i></button></td>
+                    <td><button type="button" class="btn" onclick="resetRow(this), saveClearedData(this)"><i class="fa fa-trash fa-lg"></i></button></td>
                   </tr>
                   <tr>
                     <td class="shoppingCart-image"><img src="./img/beefsteak.jpg" class="img-fluid" alt="beefsteak"></td>
@@ -283,10 +277,10 @@
                         <option>9</option>
                         <option>10</option>
                       </select> -->
-                      <input type="number" name="" value="1" class="form-control" onchange="calculateRowTotal(this, value)" min="1">
+                      <input type="number" id="inputBeefsteak" value="1" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1">
                     </td>
                     <td>15.99</td>
-                    <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-trash fa-lg"></i></button></td>
+                    <td><button type="button" class="btn" onclick="resetRow(this), saveClearedData(this)"><i class="fa fa-trash fa-lg"></i></button></td>
                   </tr>
                   <tr>
                     <td class="shoppingCart-image"><img src="./img/eggs.jpg" class="img-fluid" alt="eggs"></td>
@@ -305,10 +299,10 @@
                         <option>9</option>
                         <option>10</option>
                       </select> -->
-                      <input type="number" name="" value="1" class="form-control" onchange="calculateRowTotal(this, value)" min="1">
+                      <input type="number" id="inputEggs" value="1" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1">
                     </td>
                     <td>2.99</td>
-                    <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-trash fa-lg"></i></button></td>
+                    <td><button type="button" class="btn" onclick="resetRow(this), saveClearedData(this)"><i class="fa fa-trash fa-lg"></i></button></td>
                   </tr>
                   <tr>
                     <td class="shoppingCart-image"><img src="./img/carrots.jpg" class="img-fluid" alt="carrots"></td>
@@ -327,10 +321,10 @@
                         <option>9</option>
                         <option>10</option>
                       </select> -->
-                      <input type="number" name="" value="1" class="form-control" onchange="calculateRowTotal(this, value)" min="1">
+                      <input type="number" id="inputCarrots" value="1" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1">
                     </td>
                     <td>7.99</td>
-                    <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-trash fa-lg"></i></button></td>
+                    <td><button type="button" class="btn" onclick="resetRow(this), saveClearedData(this)"><i class="fa fa-trash fa-lg"></i></button></td>
                   </tr>
                   <tr>
                     <td class="shoppingCart-image"><img src="./img/chicken.jpg" class="img-fluid" alt="chicken"></td>
@@ -349,10 +343,10 @@
                         <option>9</option>
                         <option>10</option>
                       </select> -->
-                      <input type="number" name="" value="1" class="form-control" onchange="calculateRowTotal(this, value)" min="1">
+                      <input type="number" id="inputChicken" value="1" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1">
                     </td>
                     <td>10.99</td>
-                    <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-trash fa-lg"></i></button></td>
+                    <td><button type="button" class="btn" onclick="resetRow(this), saveClearedData(this)"><i class="fa fa-trash fa-lg"></i></button></td>
                   </tr>
                   <tr>
                     <td class="shoppingCart-image"><img src="./img/milk.jpg" class="img-fluid" alt="milk"></td>
@@ -371,10 +365,10 @@
                         <option>9</option>
                         <option>10</option>
                       </select> -->
-                      <input type="number" name="" value="1" class="form-control" onchange="calculateRowTotal(this, value)" min="1">
+                      <input type="number" id="inputMilk" value="1" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1">
                     </td>
                     <td>5.99</td>
-                    <td><button type="button" class="btn" onclick="resetRow(this)"><i class="fa fa-trash fa-lg"></i></button></td>
+                    <td><button type="button" class="btn" onclick="resetRow(this), saveClearedData(this)"><i class="fa fa-trash fa-lg"></i></button></td>
                   </tr>
                 </tbody>
                 <!-- <tfoot class="primary-color">
