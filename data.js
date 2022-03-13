@@ -20,7 +20,7 @@ function product(name, id, origin, discount_price, regular_price, description, i
 
 function loadDoc() {
 	const xhttp = new XMLHttpRequest();
-	xhttp.open("POST","database.txt", true);
+	xhttp.open("GET","database.txt", true);
 	xhttp.onload = function() {
 		var json = JSON.parse(xhttp.responseText);
 		toArray(json);
