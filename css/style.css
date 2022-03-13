@@ -10,6 +10,11 @@
 .primary-color-background{
 	background-color: #416A59;
 }
+
+a{
+	text-decoration: none;
+}
+
 html,body
 {
     background-color: #E1EEDD;
