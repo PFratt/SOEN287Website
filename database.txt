@@ -1,0 +1,2 @@
+[{"name": "Eggs","id": 0, "origin": "Tadousac","discount_price": 40.00,"regular_price": 23,"description":"A bunch of random Shit","image_ref":"./img/eggs.jpg","aisle":"Dairy & Eggs","numOfItems":"1 dozen per carton","quantity":0, "aisle_location":"dairy-eggs.html"},
+{"name": "Redfish","id": 1, "origin": "Atlantic","discount_price": null,"regular_price": 20,"description":"A bunch of random Shit","image_ref":"./img/redfish.jpg","aisle":"Fish & Seafood","numOfItems":"2 fish per package","quantity":0, "aisle_location":"fish-seafood.html"}]
