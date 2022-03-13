@@ -274,10 +274,16 @@ input[type=text], input[type=password] {
 	padding-top: 30px;
 }
 
-.image-product-page{
+.image-product-page-container{
 	padding: 12px;
 	margin: 12px;
 }
+
+.image-product-page{
+	max-width: 280px;
+	border: 1px solid black;
+}
+
 .outer{
 	width: 100%;
 }
