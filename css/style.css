@@ -12,7 +12,7 @@
 }
 
 a{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 html,body
@@ -122,6 +122,7 @@ html,body
 .food-name{
 	font-size: 17px;
 	font-family: sans-serif;
+	color: black;
 }
 .price-discount-name{
 	font-family: sans-serif;
