@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<head>
 		<meta charset="Ut-5">
-		<meta http-equiv="refresh" content="120">
+		<meta http-equiv="refresh" content="1200000000">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -16,11 +16,11 @@
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<title>ShopiFood</title>
 	</head>
-	<body class="m-auto" id="Redfish" onload="loadDoc();">
+	<body class="m-auto" id="Strip Steak" onload="loadDoc();">
 		<h1 class="fluid-container secondary-color pt-2 mb-0 sticky-top row" id="storeBanner">
 			<div class="container navbar-expand-md navbar-light">
 				<span class="primary-color" id="storeName">
-					<a class="pt-3 pr-1 pl-1 pb-2" style="color:#416A59" href="Practice2nditem.html">
+					<a class="pt-3 pr-1 pl-1 pb-2" style="color:#416A59" href="index.html">
 					ShopiFood
 					</a>
 				</span>
