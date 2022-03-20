@@ -2,6 +2,18 @@ var data_info;
 var list_of_products = new Array();
 
 
+window.addEventListener('load', addEventListenerTop);
+     
+
+
+function topFunction() {
+	var navButton = document.getElementsByClassName("navbar-toggler float-right")[0];
+	if(navButton.getAttribute('aria-expanded') == 'false'){
+		document.body.scrollTop = 0;
+  		document.documentElement.scrollTop = 0;
+	}
+} 
+
 function product(name, id, origin, discount_price, regular_price, description, image_ref, aisle, aisle_location, numOfItems, quantity) {
 	this.name = name;
 	this.id = id;
@@ -128,18 +140,14 @@ function content(element) {
 
 function addEventListenerToElement(){
 	document.getElementById('description_button').addEventListener('click', displayDescription);
-	var navButton = document.getElementsByClassName("navbar-toggler float-right")[0];
-	navButton.addEventListener('click', topFunction);
 	loadPData();
 }
 
-function topFunction() {
+
+function addEventListenerTop(){
 	var navButton = document.getElementsByClassName("navbar-toggler float-right")[0];
-	if(navButton.getAttribute('aria-expanded') == 'false'){
-		document.body.scrollTop = 0;
-  		document.documentElement.scrollTop = 0;
-	}
-}      
+	navButton.addEventListener('click', topFunction);
+}
 
 function displayDescription(){
     this.classList.toggle("active");
