@@ -53,8 +53,10 @@ function productMatch(list_of_products) {
 }
 
 function content(element) {
+	var price = null;
 	element.regular_price = (Math.round(element.regular_price * 100) / 100).toFixed(2);
 	if(element.discount_price == null){
+		price = element.regular_price;
 		document.getElementById("target_spot").innerHTML = 
 			'<div class="row">'+
 				'<div class="col-md-12 mt-4">'+
@@ -72,9 +74,10 @@ function content(element) {
 						'<p class="price-name mb-0">'+element.regular_price+'$</p>'+
 						'<p class="company-name-2">Quantity</p>'+
 						'<form action= "PHP FILE FOR LATER!">'+
-							'<input class="quantity-input-2 mr-1" type="number" id="quantity" name="'+element.name+'" min="1" max="99" value="" onchange="saveData(name, value)">'+
-							'<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>'+
+							'<input class="quantity-input-2 mr-1" type="number" id="quantity" name="'+element.name+'" min="1" max="99" value="" onload="calTotalPrice(value, '+element.discount_price+');" onchange="storeData(name, value); calTotalPrice(value, '+element.regular_price+');">'+
+							'<button class="justify-content-center mt-0 pb-1" id="quantity_button" onclick="addToCart();" type="button">ADD TO CART</button>'+
 						'</form>'+
+						'<p class="price-name" id="total-price"><p>'+
 					'</div>'+
 				'</span>'+
 				'<div class="col-md">'+
@@ -86,6 +89,7 @@ function content(element) {
 			'</div>';
 	} else {
 		element.discount_price = (Math.round(element.discount_price * 100) / 100).toFixed(2);
+		price = element.discount_price;
 		document.getElementById("target_spot").innerHTML = 
 			'<div class="row">'+
 				'<div class="col-md-12 mt-4">'+
@@ -104,9 +108,10 @@ function content(element) {
 						'<p class="regular-price-name mb-0">'+element.regular_price+'$</p>'+
 						'<p class="company-name-2">Quantity</p>'+
 						'<form action= "PHP FILE FOR LATER!">'+
-							'<input class="quantity-input-2 mr-1" type="number" id="quantity" name="'+element.name+'" min="1" max="99" value="" onchange="saveData(name, value)">'+
-							'<button class="justify-content-center mt-0 pb-1" type="button">ADD TO CART</button>'+
+							'<input class="quantity-input-2 mr-1" type="number" id="quantity" name="'+element.name+'" min="1" max="99" value="" onload="calTotalPrice(value, '+element.discount_price+');" onchange="storeData(name, value); calTotalPrice(value, '+element.discount_price+');">'+
+							'<button class="justify-content-center mt-0 pb-1" id="quantity_button" onclick="addToCart();" type="button">ADD TO CART</button>'+
 						'</form>'+
+						'<p class="price-name" id="total-price"><p>'+
 					'</div>'+
 				'</span>'+
 				'<div class="col-md">'+
@@ -118,13 +123,23 @@ function content(element) {
 			'</div>';	
 	}
 	addEventListenerToElement();
+	calTotalPrice(document.getElementById("quantity").value, price);
 }
 
 function addEventListenerToElement(){
 	document.getElementById('description_button').addEventListener('click', displayDescription);
-	loadData();
+	var navButton = document.getElementsByClassName("navbar-toggler float-right")[0];
+	navButton.addEventListener('click', topFunction);
+	loadPData();
 }
 
+function topFunction() {
+	var navButton = document.getElementsByClassName("navbar-toggler float-right")[0];
+	if(navButton.getAttribute('aria-expanded') == 'false'){
+		document.body.scrollTop = 0;
+  		document.documentElement.scrollTop = 0;
+	}
+}      
 
 function displayDescription(){
     this.classList.toggle("active");
@@ -142,15 +157,35 @@ function displayDescription(){
         }
 }
 
-function saveData(name, value)
+function calTotalPrice(quant, price){
+	var Tprice = (Number(quant)*Number(price));
+	Tprice = (Math.round(Tprice * 100) / 100).toFixed(2)
+	if(quant == 0 || quant === null)
+		document.getElementById("total-price").innerHTML = "";
+	else{
+		document.getElementById("total-price").innerHTML = Tprice+"$";
+	}
+	
+}
+
+function storeData(name, value)
     {
       sessionStorage.setItem(name, value);
     }
 
-function loadData()
+function loadPData()
 {
-  {
+  { 
   	var body = document.getElementsByTagName("body")[0].id;
     document.getElementById("quantity").value = sessionStorage.getItem(body);
   }
+}
+
+
+function addToCart(){
+    var body = document.getElementsByTagName("body")[0].id;
+    var desiredQuantity = sessionStorage.getItem("@"+body);
+    var addedQuantity = sessionStorage.getItem(body);
+    alert(addedQuantity + " " + body + " have been added to your cart!");
+	sessionStorage.setItem("@"+body,Number(desiredQuantity) + Number(document.getElementById("quantity").value));    	
 }
