@@ -12,13 +12,21 @@
 					<button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 	      				<span class="navbar-toggler-icon"></span>
 	    			</button>
-				<a href="login.html">
-	    			<span class="navbar-expand-md">
-	    				<button type="button" class="collapse navbar-collapse btn btn-default btn-md float-right pr-2">
-	          				<span class="fa fa-2x fa-user-circle"></span>
-	        				</button>
-	        			</span>
-					</a>
+
+	    			<script>
+						var currentUser = sessionStorage.getItem("userID");
+						if(currentUser === null){
+							document.write('<a href="login.html">'+
+	    										'<span class="navbar-expand-md">'+
+	    											'<button type="button" class="collapse navbar-collapse btn btn-default btn-md float-right pr-2">'+
+	          											'<span class="fa fa-2x fa-user-circle"></span>'+
+	        										'</button>'+
+	        									'</span>'+
+											'</a>');
+						} else {
+							document.write('<button class="collapse navbar-collapse btn btn-default btn-md float-right mt-2 pr-2" type="button" onclick="signOut();"><span class="fa fa-sign-out"></span></button>');
+						}
+					</script>
 
 					<script>
 						var currentUser = sessionStorage.getItem("userID");
@@ -70,6 +78,12 @@
 						<span class="border-top" data-toggle="collapse"></span>
 						<li class="nav-item"><a class="nav-link" href="index.php#popular-title">POPULAR FOODS</a></li>
 						<span class="border-top" data-toggle="collapse"></span>
+						<script>
+							var currentUser = sessionStorage.getItem("userID");
+							if(currentUser !== null){
+								document.write('<li class="nav-item navbar-toggler" data-toggle="collapse"><button class="btn btn-default btn-md pl-0" type="button" onclick="signOut();"><span class="fa fa-sign-out"></span></button></li>');
+							}
+						</script>
 					</ul>
 				</div>
 			</nav>
