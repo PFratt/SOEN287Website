@@ -258,3 +258,8 @@ function addToCart(){
     alert(addedQuantity + " " + item.textContent + " have been added to your cart!");
 	sessionStorage.setItem("@"+stored,Number(desiredQuantity) + Number(document.getElementById("quantity").value));    	
 }
+
+function signOut(){
+	sessionStorage.clear();
+	location.reload();
+}
