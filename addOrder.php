@@ -1,7 +1,7 @@
 
-<?php
+
 <script>
-  
+  <?php
   function addOrderToList(){
 
 	  alert("success")
@@ -50,5 +50,6 @@ if($_POST['add'] !== null) {
 
 
   }
+	?>
   </script>
-?>
+
