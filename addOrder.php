@@ -1,8 +1,8 @@
 
 
-  <?php
+  
   function addOrderToList(){
-
+<?php
 	  alert("success");
 
 
@@ -47,8 +47,7 @@ if($_POST['add'] !== null) {
 	$xml->save('productDataBase.xml');
 }
 
-
+?>
   }
-	?>
 
 
