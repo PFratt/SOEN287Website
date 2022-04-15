@@ -1,6 +1,5 @@
 
 
-<script>
   <?php
   function addOrderToList(){
 
@@ -51,5 +50,5 @@ if($_POST['add'] !== null) {
 
   }
 	?>
-  </script>
+
 
