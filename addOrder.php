@@ -1,4 +1,4 @@
-<?php
+
 
 <script>
   
@@ -51,5 +51,4 @@ if($_POST['add'] !== null) {
 
   }
   </script>
-	  
-	  ?>
+
