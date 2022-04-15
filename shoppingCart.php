@@ -15,6 +15,7 @@
       count++;
     }
   </script>
+  <?php include "addUser.php"?>
   <body>
     <!-- include the navbar header -->
     <?php include "header.html" ?>
@@ -140,7 +141,7 @@
                       <button type="button" class="btn" onclick="window.location.href = 'index.php'">Continue Shopping</button>
                     </td>
                     <td class="secondary-color">
-                      <button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button>
+                      <button type="button" class="btn" onclick="checkout();addUserToList()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button>
                     </td>
                   </tr>
                 </tfoot>
