@@ -4,7 +4,7 @@
   <?php
   function addOrderToList(){
 
-	  alert("success")
+	  alert("success");
 
 
 if($_POST['add'] !== null) {
