@@ -1,10 +1,12 @@
+<?php
+
 <script>
   
   function addOrderToList(){
 
 	  alert("success")
 
-<?php
+
 if($_POST['add'] !== null) {
 	echo "WORKS";
 	$xml = new DomDocument("1.0","UTF-8");
@@ -45,7 +47,9 @@ if($_POST['add'] !== null) {
 
 	$xml->save('productDataBase.xml');
 }
-?>
+
 
   }
   </script>
+	  
+	  ?>
