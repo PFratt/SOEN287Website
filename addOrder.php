@@ -2,6 +2,7 @@
   
   function addOrderToList(){
 
+	  alert("success")
 <?php
 if($_POST['add'] !== null) {
 	echo "WORKS";
