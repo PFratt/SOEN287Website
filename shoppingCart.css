@@ -1,0 +1,44 @@
+.shoppingCart-container img{
+  width: 75px;
+}
+
+.shoppingCart-container tbody td, tbody tr{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.shoppingCart-container tfoot{
+  font-weight: bold;
+  vertical-align: middle;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.shoppingCart-container tfoot button{
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.shoppingCart-image{
+  background-color: white;
+}
+
+#checkout-table {
+  border: 2px solid black;
+  font-size: small;
+}
+
+#checkout-table th{
+  border-bottom: 2px solid black;
+}
+
+#checkout-table button{
+  border: 1px solid black;
+}
+.table-responsive {
+  overflow-x: visible;
+  overflow-y: visible;
+}
