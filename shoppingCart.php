@@ -9,12 +9,23 @@
   <?php include "productList.php"?>
   <script type="text/javascript">
     var productArray = getProducts();
+    var productIDs = getIDs();
     var count = 0;
-    for(var i = 0; i < productArray.length; i++)
+    for(var i = 0; i < productIDs.length; i++)
     {
-      count++;
+      if(productIDs[i][1] > 0)
+      {
+        count++;
+      }
     }
   </script>
+
+  <style media="screen">
+  .table-responsive {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  </style>
   <body>
     <!-- include the navbar header -->
     <?php include "header.html" ?>
@@ -42,32 +53,74 @@
                 </thead>
                 <tbody>
                   <script type="text/javascript">
-                  //var productArray = getProducts();
-                  for(var i = 0; i < productArray.length; i++)
+
+                  if(count > 0)
                   {
-                    document.write("<tr>");
-                    document.write("<td class=\"shoppingCart-image\"><img src="+productArray[i]["image_ref"]+" class=\"img-fluid\" alt="+productArray[i]["name"]+"></td>");
-                    document.write("<td>"+productArray[i]["description"]+"</td>");
-                    if(productArray[i]["discount_price"] == "null")
+                    for(var i = 0; i < productIDs.length; i++)
                     {
-                      document.write("<td>"+productArray[i]["regular_price"]+"</td>");
+                      for(var j = 0; j < productArray.length; j++)
+                      {
+                        if(productIDs[i][0].substring(1, productIDs[i][0].length) == productArray[j]["id"] && productIDs[i][1] > 0)
+                        {
+                          document.write("<tr>");
+                          document.write("<td class=\"shoppingCart-image\"><img src="+productArray[j]["image_ref"]+" class=\"img-fluid\" alt="+productArray[j]["name"]+"></td>");
+                          document.write("<td>"+productArray[j]["description"]+"</td>");
+                          if(productArray[j]["discount_price"] == "null")
+                          {
+                            document.write("<td>"+(productArray[j]["regular_price"]*1).toFixed(2)+"</td>");
+                          }
+                          else
+                          {
+                            document.write("<td>"+(productArray[j]["discount_price"]*1).toFixed(2)+"</td>");
+                          }
+                          document.write("<td><input type=\"number\" id="+productIDs[i][0]+" value="+productIDs[i][1]+" class=\"form-control\" onchange=\"calculateRowTotal(this, value); saveData(id, value)\" min=\"1\"></td>");
+                          if(productArray[j]["discount_price"] == "null")
+                          {
+                            document.write("<td>"+(productArray[j]["regular_price"]*productIDs[i][1]).toFixed(2)+"</td>");
+                          }
+                          else
+                          {
+                            document.write("<td>"+(productArray[j]["discount_price"]*productIDs[i][1]).toFixed(2)+"</td>");
+                          }
+                          document.write("<td><button type=\"button\" class=\"btn\" onclick=\"deleteRow(this)\"><i class=\"fa fa-trash fa-lg\"></i></button></td>");
+                          document.write("</tr>");
+                        }
+                      }
                     }
-                    else
-                    {
-                      document.write("<td>"+productArray[i]["discount_price"]+"</td>");
-                    }
-                    document.write("<td><input type=\"number\" value="+productArray[i]["quantity"]+" class=\"form-control\" min=\"1\"></td>");
-                    if(productArray[i]["discount_price"] == "null")
-                    {
-                      document.write("<td>"+productArray[i]["regular_price"]*productArray[i]["quantity"]+"</td>");
-                    }
-                    else
-                    {
-                      document.write("<td>"+productArray[i]["discount_price"]*productArray[i]["quantity"]+"</td>");
-                    }
-                    document.write("<td><button type=\"button\" class=\"btn\"><i class=\"fa fa-trash fa-lg\"></i></button></td>");
-                    document.write("</tr>");
                   }
+
+                  else
+                  {
+                      document.write("<tr><td colspan=\"6\"><strong font-size:\"large\>Your Cart Is Empty!</strong></td></tr>");
+                  }
+
+
+                  //var productArray = getProducts();
+                  // for(var i = 0; i < productArray.length; i++)
+                  // {
+                  //   document.write("<tr>");
+                  //   document.write("<td class=\"shoppingCart-image\"><img src="+productArray[i]["image_ref"]+" class=\"img-fluid\" alt="+productArray[i]["name"]+"></td>");
+                  //   document.write("<td>"+productArray[i]["description"]+"</td>");
+                  //   if(productArray[i]["discount_price"] == "null")
+                  //   {
+                  //     document.write("<td>"+productArray[i]["regular_price"]+"</td>");
+                  //   }
+                  //   else
+                  //   {
+                  //     document.write("<td>"+productArray[i]["discount_price"]+"</td>");
+                  //   }
+                  //   document.write("<td><input type=\"number\" value="+productArray[i]["quantity"]+" class=\"form-control\" min=\"1\"></td>");
+                  //   if(productArray[i]["discount_price"] == "null")
+                  //   {
+                  //     document.write("<td>"+productArray[i]["regular_price"]*productArray[i]["quantity"]+"</td>");
+                  //   }
+                  //   else
+                  //   {
+                  //     document.write("<td>"+productArray[i]["discount_price"]*productArray[i]["quantity"]+"</td>");
+                  //   }
+                  //   document.write("<td><button type=\"button\" class=\"btn\"><i class=\"fa fa-trash fa-lg\"></i></button></td>");
+                  //   document.write("</tr>");
+                  // }
                   </script>
                   <!-- <tr>
                     <td class="shoppingCart-image"><img src="./img/apple.jpg" class="img-fluid" alt="apple"></td>
@@ -102,19 +155,25 @@
                 <tbody>
                   <script type="text/javascript">
                   //var productArray = getProducts();
-                  for(var i = 0; i < productArray.length; i++)
+                  for(var i = 0; i < productIDs.length; i++)
                   {
-                    document.write("<tr>");
-                    document.write("<td>"+productArray[i]["name"]+"</td>");
-                    if(productArray[i]["discount_price"] == "null")
+                    for(var j = 0; j < productArray.length; j++)
                     {
-                      document.write("<td>"+productArray[i]["regular_price"]*productArray[i]["quantity"]+"</td>");
+                      if(productIDs[i][0].substring(1, productIDs[i][0].length) == productArray[j]["id"] && productIDs[i][1] > 0)
+                      {
+                        document.write("<tr>");
+                        document.write("<td>"+productArray[j]["name"]+"</td>");
+                        if(productArray[j]["discount_price"] == "null")
+                        {
+                          document.write("<td>"+(productArray[j]["regular_price"]*productIDs[i][1]).toFixed(2)+"</td>");
+                        }
+                        else
+                        {
+                          document.write("<td>"+(productArray[j]["discount_price"]*productIDs[i][1]).toFixed(2)+"</td>");
+                        }
+                        document.write("</tr>");
+                      }
                     }
-                    else
-                    {
-                      document.write("<td>"+productArray[i]["discount_price"]*productArray[i]["quantity"]+"</td>");
-                    }
-                    document.write("</tr>");
                   }
                   </script>
                   <!-- <tr>
@@ -123,6 +182,10 @@
                   </tr> -->
                 </tbody>
                 <tfoot>
+                  <tr>
+                    <td class="secondary-color">Subtotal</td>
+                    <td class="secondary-color">0.00</td>
+                  </tr>
                   <tr>
                     <td class="secondary-color">GST</td>
                     <td class="secondary-color">0.00</td>
@@ -143,6 +206,12 @@
                       <button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button>
                     </td>
                   </tr>
+                  <script type="text/javascript">
+                  if(count > 0)
+                  {
+                    calculateTotal();
+                  }
+                  </script>
                 </tfoot>
               </table>
             </form>
@@ -153,6 +222,14 @@
   </div>
   </body>
 
+  <script type="text/javascript">
+    var loops = 10-2*count;
+
+    for(var i = 0; i < loops; i++)
+    {
+      document.write("<br>");
+    }
+  </script>
   <!-- include the footer -->
   <?php include "footer.html" ?>
 </html>

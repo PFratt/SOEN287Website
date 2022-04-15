@@ -38,7 +38,8 @@
 #checkout-table button{
   border: 1px solid black;
 }
+
 .table-responsive {
-  overflow-x: visible;
-  overflow-y: visible;
+  overflow-x: auto;
+  overflow-y: auto;
 }
