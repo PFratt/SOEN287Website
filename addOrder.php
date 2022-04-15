@@ -1,6 +1,6 @@
 <script>
   
-  function addUserToList(){
+  function addOrderToList(){
 
 <?php
 if($_POST['add'] !== null) {
