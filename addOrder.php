@@ -17,10 +17,8 @@ if($_POST['checkout'] !== null) {
 
 	$id = $idNumTag+1;
 	$product_quantities = $_POST["product_quantities"];
-	$checkout_table = $_POST["checkout-table"];
+	$final_price = $_POST["final_price"];
 	$user = $_POST["user"];
-	
-	$final_price = checkout_table.rows[checkout_table.rows.length-2].cells[1].innerHTML;
 	
 	$rootTag = $xml->getElementsByTagName("root")->item(0);
 
