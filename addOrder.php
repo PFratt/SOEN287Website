@@ -18,7 +18,7 @@ if($_POST['checkout'] !== null) {
 	$id = $idNumTag+1;
 	$product_quantities = $_POST["product_quantities"];
 	$final_price = $_POST["final_price"];
-	$user = $_POST["user"];
+	$user = sessionStorage.getItem("userID");
 	
 	$rootTag = $xml->getElementsByTagName("root")->item(0);
 
