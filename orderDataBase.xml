@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<root><idNumber>1</idNumber><order><product_quantities><input type="number" id="@2" value="15" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1"></product_quantities><final_price>59.85</final_price><user>Anne</user></order></root>
+<root><idNumber>29</idNumber><order><id>28</id><product_quantities>&lt;input type="number" id="@10" value="20" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1"&gt;&lt;input type="number" id="@1" value="7" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1"&gt;</product_quantities><final_price>504.6705</final_price><user/></order></root>
