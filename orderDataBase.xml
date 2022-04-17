@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<root><idNumber>1</idNumber></root>
+<root><idNumber>1</idNumber><product_quantities><input type="number" id="@2" value="15" class="form-control" onchange="calculateRowTotal(this, value); saveData(id, value)" min="1"></product_quantities><final_price>59.85</final_price><user>Anne</user></root>
