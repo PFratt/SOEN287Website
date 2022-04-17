@@ -65,7 +65,7 @@
 									alert("Incorrect email address and/or password");
 								} else {
 									if(targetUser.admin == "true")
-										window.location.href = "productSpec.php";
+										window.location.href = "allProducts.php";
 									else{
 										window.location.href = "index.php";
 									}

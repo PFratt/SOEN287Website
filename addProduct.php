@@ -1,6 +1,6 @@
+
 <?php
-if($_POST['add'] !== null) {
-	echo "WORKS";
+if(!empty($_POST['add'])) {
 	$xml = new DomDocument("1.0","UTF-8");
 	$xml->load('productDataBase.xml');
 
@@ -27,7 +27,12 @@ if($_POST['add'] !== null) {
 	$aisle = $_POST["aisle"];
 	$numOfItems = $_POST["numOfItems"];
 	$quantity = $_POST["quantity"];
-	$popular = "false";
+	$popular = $_POST["popular"];
+	if($popular == null){
+		$popular = "false";
+	} else {
+		$popular = "true";
+	}
 
 	$rootTag = $xml->getElementsByTagName("root")->item(0);
 
@@ -59,7 +64,16 @@ if($_POST['add'] !== null) {
 	$rootTag->appendChild($productTag);
 
 	$xml->save('productDataBase.xml');
+	
 }
 ?>
 
+<script>
+	var jsvar = "";
+	<?php 
+		echo "jsvar = '$id';";
+	?>
+	alert("Product with id "+jsvar+" has been added.");
+	window.location.href = "allProducts.php";
+</script>
 		

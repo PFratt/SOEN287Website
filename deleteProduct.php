@@ -1,24 +1,36 @@
+<script>
+	var delVar = null;
+	var upVar = null;
+</script>
 <?php
-if($_POST['delete'] !== null) {
-	echo "WORKS";
+if(!empty($_POST['delete'])) {
 	$xml = new DomDocument("1.0","UTF-8");
 	$xml->load('productDataBase.xml');
 
+	$list = $xml->getElementsByTagName("product");
+
 	$id = $_POST["id"];
+	$targetNode = null;
 
-	$xpath = new DOMXPATH($xml);
+	foreach($list as $domElement){
+		$IDNUMTag = $domElement->getElementsByTagName("id");
+		$attrValue = $IDNUMTag->item(0)->nodeValue;
+		if($attrValue == $id){
+			$targetNode = $domElement;
+		}
+	}
 
-	foreach ($xpath->query("/root/product[id = '$id']") as $target) {
-		$target->parentNode->removeChild($target);
+	if($targetNode != null){
+		$targetNode->parentNode->removeChild($targetNode);
 	}
 
 	$xml->formatoutput = true;
 	$xml->save('productDataBase.xml');
+
 }
 
 
-if($_POST['update'] !== null) {
-	echo "WORKS";
+if(!empty($_POST['update'])) {
 	$xml = new DomDocument("1.0","UTF-8");
 	$xml->load('productDataBase.xml');
 
@@ -35,21 +47,34 @@ if($_POST['update'] !== null) {
 	$numOfItems = $_POST["numOfItems"];
 	$quantity = $_POST["quantity"];
 	$popular = $_POST["popular"];
+	if($popular == null)
+		$popular = "false";
+	else $popular = "true";
 
-	$xpath = new DOMXPATH($xml);
+	$list = $xml->getElementsByTagName("product");
 
-	foreach ($xpath->query("/root/product[id = '$id']") as $target) {
-		$target->parentNode->removeChild($target);
+	$targetNode = null;
+
+	foreach($list as $domElement){
+		$IDNUMTag = $domElement->getElementsByTagName("id");
+		$attrValue = $IDNUMTag->item(0)->nodeValue;
+		if($attrValue == $id){
+			$targetNode = $domElement;
+		}
+	}
+
+	if($targetNode != null){
+		$targetNode->parentNode->removeChild($targetNode);
 	}
 
 	$rootTag = $xml->getElementsByTagName("root")->item(0);
 
 	$productTag = $xml->createElement("product");
 		$nameTag = $xml->createElement("name", $name);
-		$idTag = $xml->createElement("ID", $id);
+		$idTag = $xml->createElement("id", $id);
 		$originTag = $xml->createElement("origin", $origin);
-		$discountTag = $xml->createElement("discount", $discount_price);
-		$priceTag = $xml->createElement("price", $price);
+		$discountTag = $xml->createElement("discount_price", $discount_price);
+		$priceTag = $xml->createElement("regular_price", $price);
 		$descriptionTag = $xml->createElement("description", $description);
 		$image_refTag = $xml->createElement("image_ref", $image_ref);
 		$aisleTag = $xml->createElement("aisle", htmlspecialchars($aisle));
@@ -73,6 +98,23 @@ if($_POST['update'] !== null) {
 
 	$xml->formatoutput = true;
 	$xml->save('productDataBase.xml');
+
 }
 
 ?>
+
+<script>
+	<?php 
+	if(!empty($_POST['update']))
+		echo "upVar = '$id';";
+	else echo "delVar = '$id';";
+	?>
+if(delVar == null){
+	alert("Product with id " + upVar + " has been successfully modified.");
+	window.location.href = "allProducts.php";
+} else {
+	alert("Product with id " + delVar + " has been successfully deleted.");
+	window.location.href = "allProducts.php";
+}
+
+</script>

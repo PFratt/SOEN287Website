@@ -1,12 +1,12 @@
+
 <?php
-if($_POST['add'] !== null) {
-	echo "WORKS";
+if(!empty($_POST['add'])) {
 	$xml = new DomDocument("1.0","UTF-8");
 	$xml->load('userDataBase.xml');
 
 	$xpath = new DOMXPATH($xml);
 
-	foreach ($xpath->query("//IDNumber") as $target) {
+	foreach ($xpath->query("//idNumber") as $target) {
 		$idNumTag = $target->nodeValue;
 		echo $target->nodeValue;
 		$target->nodeValue = $idNumTag+1;
@@ -21,6 +21,9 @@ if($_POST['add'] !== null) {
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 	$admin = $_POST["admin"];
+	if($admin == null){
+		$admin = "false";
+	} else $admin = "true";
 
 	$rootTag = $xml->getElementsByTagName("root")->item(0);
 
@@ -46,3 +49,13 @@ if($_POST['add'] !== null) {
 	$xml->save('userDataBase.xml');
 }
 ?>
+
+
+<script>
+	var jsvar = "";
+	<?php 
+		echo "jsvar = '$ID';";
+	?>
+	alert("User with id "+jsvar+" has been created.");
+	window.location.href = "index.php";
+</script>

@@ -2,13 +2,14 @@
 
 <body>
 <?php include "header.html" ?>
+
 <div class = "container mt-3 pt-3">
     <div class = "row">
 	  <div class = "col-15 col-sm-15 col-md-30 m-auto">
 	      <div class = "card-transparent">
 	          <div class = "card-body">
 					<div class="card-body align-items-center d-flex justify-content-center">
-						<form class= ".login-form" action="sign-up.php" method="post">
+						<form class= ".login-form" action="addUser.php" method="post">
 						<label><h1> Sign up </h1></label>
 						</br>
 						<label>First Name</label>
@@ -44,9 +45,9 @@
 						</span>
 						</br>
 						Already have an account?&nbsp; <a href="login.php">Sign in</a>
-						<input type ="reset" name="Reset" value = "Reset" class = "reset-button"; <a href="create_account.php"></input>
+						<input type ="reset" name="Reset" value = "Reset" class = "reset-button" href="create_account.php"></input>
 						</br>
-						<input type ="submit" name="sign-up" value = "Sign up" class = "submit-button";></input>
+						<input onclick="login();" type ="submit" name="add" value = "Sign up" class = "submit-button";></input>
 					</form>
 				</div>
 			</div>

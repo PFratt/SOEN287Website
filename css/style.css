@@ -352,3 +352,11 @@ input[type=text], input[type=password] {
   display: none;
 
 }
+
+.selectorButton {
+    cursor: pointer;
+    color: black;
+    background-color: 416A59;
+    padding: 10px 32px;
+    font-size: 15px;
+}

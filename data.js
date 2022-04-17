@@ -29,9 +29,15 @@ window.onload = function(){
 		backstore.remove();
 
 		var body = document.getElementsByTagName("body")[0];
-		if(body.classList.contains("backstore"))
+		if(body.classList.contains("backstore")){
 			body.innerHTML = "User does not have access to this page.";
+			setTimeout(invalidRedirect, 3000);
+		}
 	}
+}
+
+function invalidRedirect(){
+	window.location.href = "index.php";
 }
 
 function aisleLocation(aisle) {

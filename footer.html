@@ -20,10 +20,14 @@
       <span class="col-md">
         <p class="footer-content">Sitemap</p>
         <a href="index.php" class="footer-subcontent">Home</a><br>
-        <a href="shoppingCart.html" class="footer-subcontent">Shopping Cart</a><br>
-        <a href="create_account.html" class="footer-subcontent">Sign Up</a><br>
-        <a href="login.html" class="footer-subcontent">Sign In</a><br>
-        <a href="reset_password.html" class="footer-subcontent">Reset Password</a><br>
+        <script>
+          if(sessionStorage.getItem("userID") == null){
+            document.write('<a href="create_account.php" class="footer-subcontent">Sign Up</a><br><a href="login.php" class="footer-subcontent">Sign In</a><br><a href="reset_password.php" class="footer-subcontent">Reset Password</a><br>');
+          } else {
+            document.write('<a href="shoppingCart.php" class="footer-subcontent">Shopping Cart</a><br><a href="index.php" onclick="signOut();" class="footer-subcontent">Sign Out</a><br>');
+          }
+        </script>
+        
       </span>
       <span class="col-md">
         <p class="footer-content">Aisles</p>
@@ -35,12 +39,9 @@
       </span>
       <span class="col-md" id="backstore">
         <p class="footer-content">Backstore</p>
-        <a href="ordersList.html" class="footer-subcontent">List of Orders</a><br>
-        <a href="ordersSpec.html" class="footer-subcontent">Order Specifics</a><br>
-        <a href="productList.html" class="footer-subcontent">List of Products</a><br>
-        <a href="productSpec.php" class="footer-subcontent">Product Specifics</a><br>
-        <a href="usersList.html" class="footer-subcontent">List of Users</a><br>
-        <a href="userSpecs.html" class="footer-subcontent">User Specifics</a><br>
+        <a href="allOrders.php" class="footer-subcontent">List of Orders</a><br>
+        <a href="allProducts.php" class="footer-subcontent">List of Products</a><br>
+        <a href="allUsers.php" class="footer-subcontent">List of Users</a><br>
         <br>
       </span>
       <span class="col-md">
