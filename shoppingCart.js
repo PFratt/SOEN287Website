@@ -111,4 +111,5 @@ function getProdCounts()
     listing = listing.concat(prod);
   }
   return listing;
+
 }

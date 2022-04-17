@@ -18,6 +18,12 @@
         count++;
       }
     }
+	  
+	  var orderItems = "";
+	// if(count == 0)
+	// {
+	//	  orderItems = "There are no items in your cart!";
+	// }
   </script>
 
   <style media="screen">
@@ -204,10 +210,15 @@
                     </td>
                     <td class="secondary-color">
                       
-                      <input type = "hidden" name = "final_price" id = "final_price" value = 0.00>
-		      	          <script>
-		                	document.getElementById("final_price").value = getTotal();
-			                </script>
+                      	<input type = "hidden" name = "final_price" id = "final_price" value = 0.00>
+		      	<script>
+		      		document.getElementById("final_price").value = getTotal();
+		  	</script>
+			    
+			<input type = "hidden" name = "product_quantities" id = "product_quantities" value = "">
+			<script>
+				document.getElementById("product_quantities").value = getProdCounts();
+			</script>
                       <!--button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button-->
                       
                       <input type="submit" name="checkout" value="checkout" class="submit-button"> </input>
