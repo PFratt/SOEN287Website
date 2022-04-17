@@ -23,6 +23,7 @@ html,body
     overflow-x: hidden;
 }
 img{
+	object-fit: contain;
 	width: 100%;
 	height: auto;
 	vertical-align: middle;
