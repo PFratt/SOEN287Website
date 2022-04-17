@@ -97,3 +97,31 @@ function getTotal()
   
   return final;
 }
+
+function getProdCounts(count) {
+  if (count == 0)
+  {
+   return "Your cart is empty!"; 
+  }
+  
+  var shoppingCartTable = document.getElementById('shoppingCart-table');
+  var listing = "";
+  var itemID = "";
+  var itemQT = 0;
+  var spacer = ", ";
+  var nextItem = ". "
+  
+  for(var i = 0; i < shoppingCartTable.length; i++)
+  {
+    itemID = shoppingCartTable[i][3].id;
+    itemQT = shoppingCartTable[i][3].value;
+    
+    listing = listing.concat(itemID);
+    listing = listing.concat(spacer);
+    listing = listing.concat(itemQT);
+    listing = listing.concat(nextItem);
+  }
+  
+  return listing;
+  
+}
