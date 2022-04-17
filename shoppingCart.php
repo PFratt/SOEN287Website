@@ -203,7 +203,14 @@
                       <button type="button" class="btn" onclick="window.location.href = 'index.php'">Continue Shopping</button>
                     </td>
                     <td class="secondary-color">
-                      <button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button>
+                      
+                      <input type = "hidden" name = "final_price" id = "final_price" value = 0.00>
+		      	          <script>
+		                	document.getElementById("final_price").value = getTotal();
+			                </script>
+                      <!--button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button-->
+                      
+                      <input type="submit" name="checkout" value="checkout" class="submit-button"> </input>
                     </td>
                   </tr>
                   <script type="text/javascript">
