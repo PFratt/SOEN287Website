@@ -79,3 +79,21 @@ function deleteRow(buttonObject)
   saveData(shoppingCartTable.rows[rowIndex].cells[3].getElementsByTagName('input')[0].id, 0);
   window.location.reload();
 }
+
+
+function getTotal()
+{
+  var total = 0.00;
+  var shoppingCartTable = document.getElementById('shoppingCart-table');
+  var checkoutTable = document.getElementById('checkout-table');
+  for(let i = 2; i < shoppingCartTable.rows.length; i++)
+  {
+    total += parseFloat(shoppingCartTable.rows[i].cells[4].innerHTML);
+  }
+
+  var GST = 0.05 * total;
+  var QST = 0.0975 * total;
+  var final = parseFloat(total+GST+QST);
+  
+  return final;
+}
