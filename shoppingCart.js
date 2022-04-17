@@ -97,3 +97,18 @@ function getTotal()
   
   return final;
 }
+
+
+function getProdCounts() 
+{
+  var shoppingCartTable = document.getElementById('shoppingCart-table');
+  var prod;
+  var listing = "";
+  
+  for(var i = 2; i < shoppingCartTable.rows.length; i++)
+  {
+    prod = shoppingCartTable.rows[i].cells[3].innerHTML;
+    listing = listing.concat(prod);
+  }
+  return listing;
+}
