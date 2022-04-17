@@ -138,7 +138,7 @@
         <!-- creating the condensed table on the right -->
         <div class="col-lg-2">
           <div class="table-responsive table-striped mt-2">
-            <form class="checkout-form" action="" method="post">
+            <form class="checkout-form" action="addOrder.php" method="post">
               <table class="table text-center" id="checkout-table">
                 <thead>
                   <br><br><br>
