@@ -18,6 +18,12 @@
         count++;
       }
     }
+	  
+	  var orderItems = "";
+	// if(count == 0)
+	// {
+	//	  orderItems = "There are no items in your cart!";
+	// }
   </script>
 
   <style media="screen">
