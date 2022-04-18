@@ -13,7 +13,7 @@
   $xml = simplexml_load_file('OrderDataBase.xml') or die("cant load xml");
       foreach ($xml as $record) {
         if(!(empty($record->id)))
-          echo "jsvar = new order('$record->id','$record->product_quantities','$record->final_price','$record->user');
+          echo "jsvar = new order('$record->id','$record->product_quantities','$record->final_price');
         orderList.push(jsvar);";
   }
       ?>  
@@ -29,7 +29,7 @@
             <table class="table table-striped text-center" id = "allOrders-table">
               <thead>
                 <tr>
-                  <td colspan = 4>
+                  <td colspan = 3>
                     <h2>All Orders</h2>
                   </td>
                 </tr>
@@ -37,7 +37,6 @@
                   <th>Order ID</th>
                   <th>Order items</th>
                   <th>Final Price of Order</th>
-                  <th>Purchased by User</th>
                  </tr>
                 </thead>
               
@@ -52,7 +51,6 @@
 			temp = "<pre>" + tester.replace(/</g, "&lt;") + "</pre>"
                     document.write("<td>"+temp+"</td>");
                     document.write("<td>"+orderList[i]["final_price"]+"</td>");
-                    document.write("<td>"+orderList[i]["user"]+"</td>");
                     document.write("</tr>")  
                   }
                   
