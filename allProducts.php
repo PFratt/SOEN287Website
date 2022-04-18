@@ -19,6 +19,22 @@
 			document.getElementById("table1").innerHTML = "";
 		}
 		else {
+			var aisle = element.aisle;
+			aisle = aisle.toLowerCase();
+			switch(aisle){
+				case "fruits & vegetables":
+					element.aisle = 0;
+					break;
+				case "dairy & eggs":
+					element.aisle = 1;
+					break;
+				case "meat & poultry":
+					element.aisle = 2;
+					break;
+				case "fish & seafood":
+					element.aisle = 3;
+					break;
+			}
 			document.getElementById("table1").innerHTML = '<tr>' +
 			'<th colspan=0> Product Specifics </th> <td> <input type="submit" name="update" value="Edit"></input> <input type="submit" name="delete" value="Delete"></input> </td>' +
 			'</tr>' +
@@ -30,11 +46,15 @@
 			'<th> Price <input type="text" name="price" value="' + element.regular_price + '"></th>' +
 			'<th> Description <input type="text" name="description" value="' + element.description + '"></th>' +
 			'<th> Image <input type="text" name="image_ref" value="' + element.image_ref + '"></th>' +
-			'<th> Aisle <select name="aisle" value="' + element.aisle + '"><option>Fruits & Vegetables</option><option>Dairy & Eggs</option><option>Meat & Poultry</option><option>Fish & Seafood</option></select></th>' +
+			'<th> Aisle <select name="aisle" id="aisle" value="' + element.aisle + '"><option>Fruits & Vegetables</option><option>Dairy & Eggs</option><option>Meat & Poultry</option><option>Fish & Seafood</option></select></th>' +
 			'<th> Quantity per unit <input type="text" name="numOfItems" value="' + element.numOfItems + '"></th>' +
-			'<th> Popular <input type="checkbox" name="popular" value="' + element.popular + '"></input></th>' +
+			'<th> Popular <input type="checkbox" id="popular" name="popular" value="popular"></input></th>' +
 			'<th> <input readonly value="' + element.id + '" name="id"> product id </input><th>' +
 			'</tr>';
+			if(element.popular == "true"){
+				document.getElementById("popular").checked = true;
+			} 
+			document.getElementById("aisle").selectedIndex = element.aisle;
 		}
 	}
 

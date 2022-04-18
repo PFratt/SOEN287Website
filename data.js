@@ -274,5 +274,5 @@ function addToCart(){
 
 function signOut(){
 	sessionStorage.clear();
-	location.reload();
+	window.location.href = "index.php";
 }
