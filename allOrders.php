@@ -48,7 +48,7 @@
                     document.write("<tr>");
                     document.write("<td>"+orderList[i]["id"]+"</td>");
                     var temp = orderList[i]["product_quantities"];
-			temp = "<pre>" + tester.replace(/</g, "&lt;") + "</pre>"
+			temp = "<pre>" + temp.replace(/</g, "&lt;") + "</pre>"
                     document.write("<td>"+temp+"</td>");
                     document.write("<td>"+orderList[i]["final_price"]+"</td>");
                     document.write("</tr>")  
