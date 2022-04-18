@@ -18,7 +18,7 @@ if($_POST['checkout'] !== null) {
 	$id = $idNumTag+1;
 	$product_quantities = $_POST["product_quantities"];
 	$final_price = $_POST["final_price"];
-	$user = sessionStorage.getItem("userID");
+	//$user = sessionStorage.getItem("userID");
 	
 	$rootTag = $xml->getElementsByTagName("root")->item(0);
 
@@ -26,13 +26,13 @@ if($_POST['checkout'] !== null) {
 		$idTag = $xml->createElement("id", $id);
 		$product_quantitiesTag = $xml->createElement("product_quantities", $product_quantities);
 		$final_PriceTag = $xml->createElement("final_price", $final_price);
-		$userTag = $xml->createElement("user", $user);
+		//$userTag = $xml->createElement("user", $user);
 
 
 	$orderTag->appendChild($idTag);
 	$orderTag->appendChild($product_quantitiesTag);
 	$orderTag->appendChild($final_PriceTag);
-	$orderTag->appendChild($userTag);
+	//$orderTag->appendChild($userTag);
 
 
 	$rootTag->appendChild($orderTag);
