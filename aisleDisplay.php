@@ -34,12 +34,12 @@
 
 				var aisle_location;
 				var iterations = 0;
-				var content = "";
+				var content = "<br/>";
 				for(let i = 0; i < productList.length; i++){
 					aisle_location = aisleLocation(productList[i].aisle);
 					if((iterations++)%3 == 0){
 						if(iterations != 1)
-							content = content.concat(' </div> <br/> ');
+							content = content.concat(' </div> ');
 						content = content.concat(' <div class="ml-1 mr-1 row w-100"> ');
 					}
 					content = content.concat('<div class="col-md food-item">' +
