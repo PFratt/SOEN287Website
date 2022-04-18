@@ -94,11 +94,10 @@ function product(name, id, origin, discount_price, regular_price, description, i
 	this.popular = popular;
 }
 
-function order(id, product_quantities, final_price, user ){
+function order(id, product_quantities, final_price ){
 	this.id = id;
 	this.product_quantities = product_quantities;
 	this.final_price = final_price;
-	this.user = user;
 }
 
 

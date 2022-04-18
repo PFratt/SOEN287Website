@@ -221,7 +221,7 @@
 			</script>
                       <!--button type="button" class="btn" onclick="checkout()">Checkout&nbsp&nbsp<i class="fa fa-credit-card-alt"></i></button-->
                       
-                      <input type="submit" name="checkout" value="checkout" class="submit-button"> </input>
+                      <input type="submit" name="checkout" value="checkout" class="secondary-color"> </input>
                     </td>
                   </tr>
                   <script type="text/javascript">

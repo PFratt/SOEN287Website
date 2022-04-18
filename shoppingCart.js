@@ -105,7 +105,7 @@ function getProdCounts()
   var prod;
   var listing = "";
   
-  for(var i = 2; i < shoppingCartTable.rows.length; i++)
+  for(var i = 1; i < shoppingCartTable.rows.length; i++)
   {
     prod = shoppingCartTable.rows[i].cells[3].innerHTML;
     listing = listing.concat(prod);
