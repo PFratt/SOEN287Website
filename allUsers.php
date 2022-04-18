@@ -27,8 +27,11 @@
 			'<th> Email <input type="text" name="email" value="' + element.email + '"></th>' +
 			'<th> Password <input type="text" name="password" value="' + element.password + '"></th>' +
 			'<th> User ID <input type="text" name="ID" readonly value="' + element.id + '"></th>' +
-			'<th> Admin <input type="checkbox" name="admin" value="' + element.admin + '"></th>' +
+			'<th> Admin <input type="checkbox" id="admin" name="admin" value="admin"></th>' +
 			'</tr>';
+			if(element.admin == "true"){
+				document.getElementById("admin").checked = true;
+			} 
 		}
 	}
 
