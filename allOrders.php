@@ -52,7 +52,7 @@
 <form method="POST" action="addOrder.php">
 <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=0>
 <tr>
-<th colspan=0>Add New Order</th> <td> <input class="selectorButton" type="submit" name="add" value="Add"></td>
+<th colspan=0>Add New Order</th> <td> <input class="selectorButton" type="submit" name="checkout" value="Add"></td>
 </tr>
 <tr>
 <th> Product Quantities <input type="text" name="product_quantities"></th>
