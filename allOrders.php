@@ -3,6 +3,7 @@
 <body class="backstore">
 
  <?php include "header.html" ?>
+<?php include orderList.php ?>
  <div class="container">
 	<script>
 	function contentGenerate(){
@@ -38,7 +39,7 @@
 
 					<script>
 
-				 	 var orderArray = getOrder();
+				 	 var orderArray = getOrders();
 				 		var selectOrderID = document.getElementById("selectOrder");
 				 		var string = '<option value="">--- Select ---</option>';
 				 		for(var i = 0; i < orderArray.length; i++){
