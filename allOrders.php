@@ -1,6 +1,6 @@
 
 <?php include "head.inc.php" ?>
-<body>
+<body class="backstore">
 	<?php include "header.html" ?>
 
 		<div class="container">
